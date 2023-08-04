@@ -18,7 +18,7 @@ class Jogador {
     }
     drible() {
         alert(this.nome + " inicia investida arriscadíssima contra o adversário")
-        alert(" Mas que jogada ignorante, meus queridos. Um drible de primeira categoria. É o maior dos maiores, o grande camisa" + this.nome)
+        alert(" Mas que jogada ignorante, meus queridos. Um drible de primeira categoria. É o maior dos maiores, o grande camisa" + this.numcamisa)
     }
     chutar() {
         alert("Camisa número " + this.numcamisa + "bate de" + this.habilidade + ". A torcida vai a loucuraaaa")
@@ -54,12 +54,9 @@ function ataque(Jogador1, Goleiro){
     }
 }
 
-// var nm = window.prompt('Digite o nome do jogador')
-// var number = parseInt(window.prompt('Digite o número da camisa do seu jogador'))
-// var habil = window.prompt('Escolha uma habilidade para o seu jogador: ')
-
-var nm = "Jonathan"
-var number = 12
+var nm = window.prompt('Digite o nome do jogador')
+var number = parseInt(window.prompt('Digite o número da camisa do seu jogador'))
+var habil = window.prompt('Escolha uma habilidade para o seu jogador: ')
 var habil = "de chaapaaaa"
 var defesa = Math.floor(Math.random() * 10) 
 var forca = Math.floor(Math.random() *10)
@@ -103,17 +100,16 @@ choose_pl1 = window.prompt("A bola vai em sua direção e junto dela parte o seu
             choose_pl1 = window.prompt(player.nome + " invade a área adversária, mas " + igor.nome + " tenta interceptar. Digite" + "\n" + "1 - chutar" + "\n" + "2 - drible" + "\n" + "3 - defender")
             if(choose_pl1 == 1){
                 player.chutar()
-                ataque(player)
-                return index = 6
+                ataque(player)                
             }
             if(choose_pl1 == 2){
                 player.drible()
                 // criar algoritmo para iguinho e fazê-lo ter sua própria decisão
             }
-            if(choose_pl1 == 3){
+            if(choose_pl1 == 3 ){
                 player.defender()
                 disputa(player, igor)
-                return
+                
             }
         }   
         if(result = igor.nome){
@@ -122,12 +118,12 @@ choose_pl1 = window.prompt("A bola vai em sua direção e junto dela parte o seu
             if(choose_pl1 == 1){
                 player.chutar()
                 ataque(player)
-                return index = 6
+                 
             }
             if(choose_pl1 == 2){
                 player.defender()
                 disputa(player, igor)
-                return
+                
             }
             if(choose_pl1 != 1 || choose_pl1 != 2){
                 igor.chutar()
